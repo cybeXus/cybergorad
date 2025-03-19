@@ -1,0 +1,90 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cybeXus | IT company</title>
+</head>
+<body>
+
+
+    <a href="#blog">blog</a>
+    <a href="#about">About</a>
+    <a href="#formation">Formations</a>
+    <a href="#contact">Contact</a>
+
+
+
+    {% if user.is_authenticated %}
+        <h1>Welcome {{ user.first_name|default:user.username }}, we are cybeXus</h1>
+        
+        <!-- Formulaire de déconnexion -->
+        <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+    {% else %}
+        <h1>Welcome guest, we are cybeXus</h1>
+    {% endif %}
+
+    
+
+    <a href="{% url 'sign_in'%}">Sign in</a>
+    <a href="{% url 'login' %}">login</a>
+    <br><br>
+
+
+
+    <div id="about">
+        <h1>A propos de nous</h1>
+        <p>Hello we are cybeXus , team for innovation and collaboration</p>
+
+
+    </div>
+
+
+
+
+<div id="formation">
+    <h1>Nos Formations</h1>
+    <ul>
+        {% for formation in formations %}
+            <li>{{ formation.titre }} - {{ formation.description }}</li>
+            
+            {% if formation.video %}
+                <video controls muted loop id="myVideo" width="500px" height="500px">
+                    <source src="{{ formation.video.url }}" type="video/mp4">
+                    ERROR: Don't support HTML 5 Vidéos
+                </video>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+    <h1 id="blog">blog</h1>
+    {% for blog in blogs %}
+    <li>{{blog.titre}} - {{blog.date_publication}}</li>
+    <h2>{{ blog.contenu }}</h2>
+    {% endfor %}
+
+
+
+
+
+
+    <div id="contact">
+
+        <h1>contact</h1>
+        <p>Analamahitsy</p>
+        <p>tel : +2617581356</p>
+
+
+    </div>
+</body>
+</html>
