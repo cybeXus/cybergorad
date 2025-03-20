@@ -1,40 +1,228 @@
+
+{% load static %}
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cybeXus | IT company</title>
+
+
 </head>
-<body>
 
 
-    <a href="#blog">blog</a>
-    <a href="#about">About</a>
-    <a href="#formation">Formations</a>
-    <a href="#contact">Contact</a>
+<script src="{% static 'script.js' %}"></script>
 
 
 
-    {% if user.is_authenticated %}
-        <h1>Welcome {{ user.first_name|default:user.username }}, we are cybeXus</h1>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<link rel="stylesheet" href="{% static 'w3.css' %}">
+   <!-- Font Awesome pour les icônes -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+<body class="w3-animate-opacity">
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <span id="logo">
+            <img src="{% static 'cybexus.jpg' %}" alt="logo" >  
+
+        </span>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="nav-links">
+            <a class="test" href="#about" style="color: red;"><i class="fa-solid fa-user"></i> About us</a>
+            <a class="test" href="#formation" style="color: red;"><i class="fa-solid fa-book-open"></i> Formations</a>
+            <a class="test" href="#blog" style="color: red;"><i class= "fa-solid fa-newspaper"></i> Blog</a>
+            <a class="test" href="#contact" style="color: red;"><i class="fa-solid fa-envelope"></i> Contact</a>
+
+            <a href="{% url 'sign_in' %}"><i class="fa-solid fa-user-plus"></i> Sign in</a>
+            <a href="{% url 'login' %}"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+
+
+
+            {% if user.is_authenticated %}
+                <p><i class="fa-solid fa-user-circle"></i> Connected: {{ user.first_name|default:user.username }}</p>
+                
+                <!-- Formulaire de déconnexion -->
+                <form method="POST" action="{% url 'logout' %}" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-sm">
+                        <i class="fa-solid fa-sign-out-alt"></i> Logout
+                    </button>
+                </form>
+            {% else %}
+                <p><i class="fa-solid fa-hand-wave"></i></p>
+            {% endif %}
+        </div>
+    </nav>
+
+
+
+    <!-- HEADER -->
+    <header class="header-container">
+      
+        <img src="{% static 'cybexus1.jpeg' %}" alt="fond">
+        <div class="header-text">
+            Bienvenue chez 
+        </div>
+    </header>
+
+    <script>
+
         
-        <!-- Formulaire de déconnexion -->
-        <form method="POST" action="{% url 'logout' %}">
-            {% csrf_token %}
-            <button type="submit">Logout</button>
-        </form>
-    {% else %}
-        <h1>Welcome guest, we are cybeXus</h1>
-    {% endif %}
+    function toggleMenu() {
+        document.querySelector(".nav-links").classList.toggle("show");
+    }
+</script>
 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-size: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        /* ======= NAVBAR ======= */
+        #navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;/*space-between*/
+            position: fixed;
+            width: 100%;
+            background-color: white;
+            padding: 5px 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            z-index: 1000;
+            
+        }
+
+        #logo img {
+
+            width: 130px;
+            height: auto;
+
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 12px;
+            padding: 8px 12px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        .nav-links a.active {
+            color: blue;
+            font-weight: bold;
+        }
+
+        /* Responsive Menu */
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+
+
+        .header-text {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                z-index: 999999;
+              
+            }
+
+            .nav-links.show {
+                display: flex;
+                flex-direction: column;
+                z-index: 99999;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+            .header-text {
+
+ 
+            font-size: 0px;
+ 
+            }
+        }
+
+        /* ======= HEADER ======= */
+        .header-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
+
+        .header-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
     
 
-    <a href="{% url 'sign_in'%}">Sign in</a>
-    <a href="{% url 'login' %}">login</a>
     <br><br>
 
 
 
-    <div id="about">
+    <div id="about" style="text-align: center;">
         <h1>A propos de nous</h1>
         <p>Hello we are cybeXus , team for innovation and collaboration</p>
 
@@ -61,13 +249,20 @@
 </div>
 
 
+<!-- Lien vers le JS de AOS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // Initialiser AOS
+    AOS.init();
+</script>
+
+
+<br>
+<img  class="w3-card-4 w3-image" src="https://tsilavina.alwaysdata.net/profil.jpg" alt="commanders" data-aos="fade-left" data-aos-duration="700" data-aos-delay="500" style="width: 500px;height: 500px;">
 
 
 
-
-
-
-    <h1 id="blog">blog</h1>
+    <h1 id="blog" style="text-align: center;" >blog</h1>
     {% for blog in blogs %}
     <li>{{blog.titre}} - {{blog.date_publication}}</li>
     <h2>{{ blog.contenu }}</h2>
@@ -77,6 +272,8 @@
 
 
 
+
+    <br><br><br>
 
     <div id="contact">
 
