@@ -1,5 +1,25 @@
 
 {% load static %}
+
+<!-- Code Couleur Logo:
+
+    #d0d3d8 (Gris clair)
+    #cfd2d7 (Gris moyen)
+    #cacdd6 (Gris bleuâtre)
+    #c0c7cf (Bleu-gris)
+    #bac6d2 (Bleu clair)
+    #b6c4cf (Bleu-gris foncé) 
+    
+    
+    background-color #f8f9fa;
+
+
+#167362
+
+outils pour enlever fond : EzRemove.ai
+
+-->
+
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -26,31 +46,39 @@
 
 
 <body class="w3-animate-opacity">
-    <!-- NAVBAR -->
+    <!-- NAVBAR Section -->
     <nav id="navbar">
         <span id="logo">
-            <img src="{% static 'cybexus.jpg' %}" alt="logo" >  
+            <img src="{% static 'cybexus1.png' %}" alt="logo"  >   
 
         </span>
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
         <div class="nav-links">
-            <a class="test" href="#about" style="color: red;"><i class="fa-solid fa-user"></i> About us</a>
-            <a class="test" href="#formation" style="color: red;"><i class="fa-solid fa-book-open"></i> Formations</a>
-            <a class="test" href="#blog" style="color: red;"><i class= "fa-solid fa-newspaper"></i> Blog</a>
-            <a class="test" href="#contact" style="color: red;"><i class="fa-solid fa-envelope"></i> Contact</a>
+            <a class="test" href="#about" style="color: black;"><i class="fa-solid fa-user"></i> About us</a>
+            <a class="test" href="#formation" style="color: black;"><i class="fa-solid fa-book-open"></i> Formations</a>
+            <a class="test" href="#blog" style="color: black;"><i class= "fa-solid fa-newspaper"></i> Blog</a>
+            <a class="test" href="#contact" style="color: black;"><i class="fa-solid fa-envelope"></i> Contact</a>
 
-            <a href="{% url 'sign_in' %}"><i class="fa-solid fa-user-plus"></i> Sign in</a>
-            <a href="{% url 'login' %}"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+            <a href="{% url 'sign_in' %}" 
+            style="display: inline-block; padding: 10px 15px; background-color:  #007BFF ; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s;">
+            <i class="fa-solid fa-user-plus"></i> Sign in
+         </a>
+         
+         <a href="{% url 'login' %}" 
+            style="display: inline-block; padding: 10px 15px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; margin-left: 10px;">
+            <i class="fa-solid fa-right-to-bracket"></i> Login
+         </a>
+         
 
 
 
             {% if user.is_authenticated %}
-                <p><i class="fa-solid fa-user-circle"></i> Connected: {{ user.first_name|default:user.username }}</p>
+                <p style="margin-top: 10px;"><i class="fa-solid fa-user-circle"></i> Connected: {{ user.first_name|default:user.username }}</p>
                 
                 <!-- Formulaire de déconnexion -->
                 <form method="POST" action="{% url 'logout' %}" style="display: inline;">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-danger btn-sm">
+                    <button type="submit" class="btn btn-danger btn-sm" style="margin-top:4px;">
                         <i class="fa-solid fa-sign-out-alt"></i> Logout
                     </button>
                 </form>
@@ -59,17 +87,29 @@
             {% endif %}
         </div>
     </nav>
+    <!-- NAVBAR fin Section -->
 
 
-
-    <!-- HEADER -->
+    <!-- HEADER Section -->
     <header class="header-container">
       
-        <img src="{% static 'cybexus1.jpeg' %}" alt="fond">
+        <img src="{% static 'fond2.jpg' %}" alt="fond" class="w3-card-4" style="width: 100%;filter: brightness(0.4);">
+
         <div class="header-text">
-            Bienvenue chez 
-        </div>
+            Créons le monde du futur avec nous <br> 
+
+            <button style="background-color: rgba(0, 0, 0, 0.5); color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s;">
+                Démarrer
+            </button>
+            
+        </div> 
+        
+
+
+
+        
     </header>
+    <!--HEADER  Fin section -->
 
     <script>
 
@@ -88,6 +128,7 @@
         body{
             font-size: 10px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #f8f9fa;
         }
         /* ======= NAVBAR ======= */
         #navbar {
@@ -198,8 +239,177 @@
             height: 100%;
             object-fit: cover;
         }
+    </style>
+
+<!--A propos section -->
 
 
+<section id="about" style="margin-top: 60px;">
+    <h1 style="text-align: center;">A propos de nous?</h1>
+
+    <div style="text-align: center; color: black; height: 2px; width: 100px; background-color: black; margin: 0 auto;margin-top: 15px;" ></div>
+
+    <div class="container-fluid" >
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6 mt-5" style="padding: 100px 80px 20px 80px;" data-aos="fade-right" data-aos-duration="700" data-aos-delay="100" >
+                <p style="text-align: center;font-size: 12px;word-spacing: 2px;"> Qui sommes-nous ? 
+                    CybeXus est une entreprise spécialisée dans les technologies de l’information, la cybersécurité et le design numérique. Nous offrons des solutions avancées pour aider les entreprises et les particuliers à relever les défis du monde digital. Grâce à notre expertise en développement web, administration réseau, cybersécurité et design UI/UX, nous aidons nos clients à optimiser leur présence numérique tout en garantissant la protection de leurs données.
+                </p>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 mt-5" data-aos="fade-left" data-aos-duration="700" data-aos-delay="500" > 
+                <img src="{% static 'about.jpg'%}" alt="a_propos" class="w3-image w3-card-4 ">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--A propos FIN section -->
+
+
+
+
+
+
+
+<!--FORMATION section -->
+<section id="formation" style="margin-top: 100px;">
+<div>
+    <h1 style="text-align: center;">Nos Formations</h1>
+    <div style="text-align: center; color: black; height: 2px; width: 100px; background-color: black; margin: 0 auto;margin-top: 15px;"></div>
+
+
+
+
+    <section id="section3">
+
+        <div class="card-container">
+            <div class="card" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="100">
+                <img src="assets/img/projects/goradphish.png" alt="Projet 1" >
+                <h2>Developpement Web </h2>
+                <p>[*] Tools de simulation attaque phishing pour sensibilisation contre cyberattaque</p>
+                <button class="btn-view" onclick="window.location = 'https://github.com/cybergorad/goradphish'">Voir</button>
+            </div>
+            <div class="card" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="500">
+                <img src="assets/img/projects/goradsic.png" alt="Projet 2">
+                <h2>Cybersécurité</h2>
+                <p>[*] Rien n'est plus génial que de savourer de la musique et contempler des photos gratuitement, laissant l'imagination s'évader sans limites !</p>
+                <button class="btn-view">Voir</button>
+            </div>
+            <div class="card" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="900">
+                <img src="assets/img/projects/toliara.png" alt="Projet 3">
+                <h2>Réseau</h2>
+                <p>[*] Application Web de tourismes pour la région de Toliara de Madagascar</p>
+                <button class="btn-view" onclick="window.location = 'http://faselook.atwebpages.com'">Voir</button>
+            </div>
+            <div class="card " data-aos="zoom-out" data-aos-duration="500" data-aos-delay="300">
+              <img src="assets/img/projects/gprojects.png" alt="Projet 1">
+              <h2>Développement Mobile</h2>
+              <p>[*] Un Application Laravel de Gestion de Projets (SOLO ou TEAM)</p>
+              <button class="btn-view">Voir</button>
+          </div>
+          <div class="card" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="700">
+              <img src="assets/img/projects/hacker.png" alt="Projet 2">
+              <h2>Design</h2>
+              <p>[*] Concept fondamental du termes Backdoor (INTRUSION SIMULATION)</p>
+              <button class="btn-view" onclick="window.location = 'https://github.com/cybergorad/goradshell'">Voir</button>
+          </div>
+          
+        </div>
+    </section>
+ 
+    <style>
+    
+        #section3 {
+            padding: 20px;
+            text-align: center;
+        }
+    
+        #section3 h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: black;
+        }
+    
+        /* Card container */
+        .card-container {
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
+        }
+    
+        /* Individual card styling */
+        .card {
+            background: white; /* Slightly lighter dark */
+            border: 1px solid black;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 255, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        .card:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+            box-shadow: 0 8px 20px rgba(0, 255, 0, 0.4);
+        }
+    
+        /* Image styling */
+        .card img {
+            width: 100%;
+            max-height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border: 2px solid black;
+        }
+    
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+    
+        .card p {
+            font-size: 1rem;
+            color: black;
+            margin-bottom: 20px;
+        }
+    
+        /* Button styling */
+        .btn-view {
+            padding: 10px 20px;
+            background-color: transparent;
+            color: #007BFF;
+            border: 2px solid #00ff00;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    
+        .btn-view:hover {
+            background-color: #00ff00;
+            color: #0d1117; /* Background color on hover */
+        }
+    
+        /* Responsive design */
+        @media (max-width: 1024px) {
+            .card-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+            }
+        }
+    
+        @media (max-width: 768px) {
+            .card-container {
+                grid-template-columns: 1fr; /* 1 column for mobile */
+            }
+        }
     </style>
 
 
@@ -207,39 +417,12 @@
 
 
 
-
-
-
-
-
-
-
-
-  
-    
-
-    <br><br>
-
-
-
-    <div id="about" style="text-align: center;">
-        <h1>A propos de nous</h1>
-        <p>Hello we are cybeXus , team for innovation and collaboration</p>
-
-
-    </div>
-
-
-
-
-<div id="formation">
-    <h1>Nos Formations</h1>
     <ul>
         {% for formation in formations %}
             <li>{{ formation.titre }} - {{ formation.description }}</li>
             
             {% if formation.video %}
-                <video controls muted loop id="myVideo" width="500px" height="500px">
+                <video autoplay muted loop id="myVideo" width="500px" height="500px">
                     <source src="{{ formation.video.url }}" type="video/mp4">
                     ERROR: Don't support HTML 5 Vidéos
                 </video>
@@ -247,6 +430,8 @@
         {% endfor %}
     </ul>
 </div>
+</section>
+<!--A FORMATION END section -->
 
 
 <!-- Lien vers le JS de AOS -->
@@ -275,11 +460,119 @@
 
     <br><br><br>
 
-    <div id="contact">
 
-        <h1>contact</h1>
-        <p>Analamahitsy</p>
-        <p>tel : +2617581356</p>
+
+
+ <section class="contact-container" id="contact">
+        <div class="contact-item">
+            <strong>Email :</strong> <a href="mailto:{{ contacts.email }}">{{ contacts.email }}</a>
+        </div>
+        <div class="contact-item">
+            <strong>Téléphone :</strong> {{ contacts.telephone }}
+        </div>
+        <div class="contact-item">
+            <strong>Adresse :</strong> {{ contacts.adresse }}
+        </div>
+        <div class="contact-item social-links">
+            <strong>Réseaux Sociaux :</strong>
+            <br>
+            {% for nom, lien in contacts.reseaux.items %}
+                <a href="{{ lien }}" target="_blank"><i class="fab fa-{{ nom|lower }}"></i></a>
+            {% endfor %}
+        </div>
+        <style>
+            .contact-container {
+            width: 80%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 128, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 24px rgba(0, 128, 0, 0.3);
+        }
+
+        .contact-item {
+            padding: 15px;
+            margin: 10px 0;
+            border-bottom: 1px solid #ccc;
+            transition: background 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: #f1f1f1;
+        }
+
+        a {
+            color: green;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #28a745;
+            text-decoration: underline;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            color: #155724;
+        }
+
+        /* Animations */
+        @keyframes gradientBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        </style>
+    </section>
+
+    <script>
+        // Animation pour l'apparition des éléments de contact
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactItems = document.querySelectorAll('.contact-item');
+            contactItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = 1;
+                    item.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+
+        // Ajout d'animations CSS pour l'entrée des éléments de contact
+        document.styleSheets[0].insertRule(`
+            .contact-item {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+            }
+        `);
+    </script>
 
 
     </div>
