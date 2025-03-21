@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formations Cybersécurité</title>
+</head>
+<body>
+    <h1>Formations en Design</h1>
+    
+    {% for formation in formations %}
+        <div>
+            <h2>{{ formation.titre }}</h2>
+            <p>{{ formation.description }}</p>
+            {% if formation.video %}
+                <video width="600" controls>
+                    <source src="{{ formation.video.url }}" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture de vidéos.
+                </video>
+            {% endif %}
+            <p>Ajouté le : {{ formation.date_creation }}</p>
+        </div>
+        <hr>
+    {% empty %}
+        <p>Aucune formation disponible pour le moment.</p>
+    {% endfor %}
+</body>
+</html>
