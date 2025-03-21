@@ -1,22 +1,17 @@
-
 {% load static %}
+<!-- CYBEXUS 2025  -->
 
 <!-- Code Couleur Logo:
-
     #d0d3d8 (Gris clair)
     #cfd2d7 (Gris moyen)
     #cacdd6 (Gris bleuâtre)
     #c0c7cf (Bleu-gris)
     #bac6d2 (Bleu clair)
     #b6c4cf (Bleu-gris foncé) 
-    
-    
     background-color #f8f9fa;
+    #167362
 
-
-#167362
-
-outils pour enlever fond : EzRemove.ai
+---- outils pour enlever fond : EzRemove.ai
 
 -->
 
@@ -24,24 +19,17 @@ outils pour enlever fond : EzRemove.ai
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cybeXus | IT company</title>
-
-
+    <title>cybeXus | IT company | innovation</title>
 </head>
 
 
 <script src="{% static 'script.js' %}"></script>
-
-
-
 <link rel="stylesheet" href="{% static 'style.css' %}">
 <link rel="stylesheet" href="{% static 'w3.css' %}">
    <!-- Font Awesome pour les icônes -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">  
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
@@ -50,7 +38,6 @@ outils pour enlever fond : EzRemove.ai
     <nav id="navbar">
         <span id="logo">
             <img src="{% static 'cybexus1.png' %}" alt="logo"  >   
-
         </span>
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
         <div class="nav-links">
@@ -104,10 +91,6 @@ outils pour enlever fond : EzRemove.ai
             <a href="{% url 'login' %}" class="button-parallelogram" style="margin-left: 5px;">
                 <i class="fa-solid fa-right-to-bracket"></i> Login
             </a>
-           
-         
-
-
 
             {% if user.is_authenticated %}
                 <p style="margin-top: 10px;" class="test"><i class="fa-solid fa-user-circle test"></i> Connected: {{ user.first_name|default:user.username }}</p>
@@ -127,19 +110,87 @@ outils pour enlever fond : EzRemove.ai
     <!-- NAVBAR fin Section -->
 
 
+
+
+<!-- Bandeau de cookies -->
+<div id="cookie-banner">
+    <p>Ce site utilise des cookies pour améliorer votre expérience. <a href="#">En savoir plus</a></p>
+    <button id="accept-cookies">Accepter</button>
+</div>
+<style>
+    #cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background:black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#cookie-banner p {
+    margin: 0;
+    font-size: 14px;
+}
+
+#cookie-banner a {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+#accept-cookies {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#accept-cookies:hover {
+    background: #0056b3;
+}
+
+</style>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var cookieBanner = document.getElementById("cookie-banner");
+        var acceptButton = document.getElementById("accept-cookies");
+
+        // Vérifier si l'utilisateur a déjà accepté les cookies
+        if (!localStorage.getItem("cookiesAccepted")) {
+            cookieBanner.style.opacity = "1";
+            cookieBanner.style.visibility = "visible";
+        }
+
+        // Accepter les cookies
+        acceptButton.addEventListener("click", function () {
+            localStorage.setItem("cookiesAccepted", "true");
+            cookieBanner.style.opacity = "0";
+            setTimeout(() => cookieBanner.style.visibility = "hidden", 500);
+        });
+    });
+
+</script>
+<!-- COOKIES FIN -->
+
+
+
     <!-- HEADER Section -->
     <header class="header-container">
-      
         <img src="{% static 'blue_plexus.jpg' %}" alt="fond" class="w3-card-4" style="width: 100%;filter: brightness(0.4);">
-
         <div class="header-text">
-            Créeons le monde du futur avec nous <br> <br>
-
-   
-   
-   
-   
-   
+            Créeons le monde du <span style="color: #007BFF;">futur</span> avec nous <br> <br>
             <style>
                 .scroll-button {
                     background-color: transparent;
@@ -166,34 +217,25 @@ outils pour enlever fond : EzRemove.ai
                 }
             
                 @keyframes bounce {
-    0%, 100% {
-        transform: rotate(-45deg) translateY(10px);
-        opacity: 1;
-    }
-    50% {
-        transform: rotate(-45deg) translateY(0);
-        opacity: 0.5;
-    }
-}
+                    0%, 100% {
+                        transform: rotate(-45deg) translateY(10px);
+                        opacity: 1;
+                    }
+                    50% {
+                        transform: rotate(-45deg) translateY(0);
+                        opacity: 0.5;
+                    }
+                }
 
             </style>
             
             <button class="scroll-button" onclick="window.location.href='#about'">
                 <div class="chevron"></div>
             </button>
-           
-                
-            
             <!-- Font Awesome pour l'icône -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
-            
-            
-        </div> 
-        
-
-
-
-        
+   
+        </div>      
     </header>
     <!--HEADER  Fin section -->
 
@@ -202,22 +244,44 @@ outils pour enlever fond : EzRemove.ai
 
 
 
+<!-- Bouton Back to Top -->
+<button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" id="backToTopBtn">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+
+<!-- CSS pour le bouton -->
+<style>
+    #backToTopBtn {
+        z-index: 999999;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        padding-right: 20px;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
+        display: block; /* Caché par défaut */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        transition: opacity 0.3s;
+    }
+
+    #backToTopBtn:hover {
+        background-color: #007bff;
+
+    }
+</style>
 
 
 
 
 
-
-
-
-
-
-
-
-
-    <script>
-
-        
+<script>  
     function toggleMenu() {
         document.querySelector(".nav-links").classList.toggle("show");
     }
@@ -330,7 +394,7 @@ outils pour enlever fond : EzRemove.ai
             .header-text {
 
  
-            font-size: 0px;
+            font-size: 20px;
  
             }
         }
@@ -349,8 +413,10 @@ outils pour enlever fond : EzRemove.ai
         }
     </style>
 
-<!--A propos section -->
 
+
+
+<!--A propos section -->
 
 <section id="about" style="margin-top: 60px;">
     <h1 style="text-align: center;">A propos de nous?</h1>
@@ -370,17 +436,10 @@ outils pour enlever fond : EzRemove.ai
         </div>
     </div>
 
-
-
     <h1 style="text-align: center;margin-top: 60px;">Notre Mission</h1>
 
     <div style="text-align: center; color: black; height: 2px; width: 100px; background-color: black; margin: 0 auto;margin-top: 15px;" ></div>
 <br><br><br>
-
-
-
-
-
 
 <style>
     .section-box {
@@ -565,50 +624,73 @@ outils pour enlever fond : EzRemove.ai
     <h1 style="text-align: center;">Nos Formations</h1>
     <div style="text-align: center; color: black; height: 2px; width: 100px; background-color: black; margin: 0 auto;margin-top: 15px;"></div>
 
-
-
-
     <section id="section3">
-
         <div class="card-container">
             <div class="card" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="100">
-                <img src="{% static 'cybersecurite.png'%}" alt="Projet 1" >
-                <h2>Developpement Web </h2>
-                <p>Apprener les language de programmation REACT , LARAVEL, DJANGO</p>
-                <a href="{% url 'formations_dev_web' %}" class="btn btn-primary" title="Voir les formations de développement web">Voir</a>
-
-
-
+                <img src="{% static 'cybersecurite.png' %}" alt="Projet 1">
+                <h2>Développement Web</h2>
+                <p>Apprenez les langages de programmation REACT, LARAVEL, DJANGO</p>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'formations_dev_web' %}" class="btn btn-primary">Voir</a>
+                {% else %}
+                    <a href="#" class="btn btn-primary" onclick="alertConnexion()">Voir</a>
+                {% endif %}
             </div>
+    
             <div class="card" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="500">
-                <img src="{% static 'cybersecurite.png'%}" alt="Projet 2">
+                <img src="{% static 'cybersecurite.png' %}" alt="Projet 2">
                 <h2>Cybersécurité</h2>
-                <p>Apprener a devenir un hacker , pirater comme des pros</p>
-                <a href="{% url 'formations_cybersecurite' %}" class="btn btn-primary"  >Voir</a> 
-
+                <p>Apprenez à devenir un hacker, pirater comme des pros</p>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'formations_cybersecurite' %}" class="btn btn-primary">Voir</a>
+                {% else %}
+                    <a href="#" class="btn btn-primary" onclick="alertConnexion()">Voir</a>
+                {% endif %}
             </div>
+    
             <div class="card" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="900">
-                <img src="{% static 'cybersecurite.png'%}" alt="Projet 3">
+                <img src="{% static 'cybersecurite.png' %}" alt="Projet 3">
                 <h2>Réseau</h2>
-                <p>Maitriser la réseau informatique , base de la cybersécurité</p>
-                <a href="{% url 'formations_reseau' %}" class="btn btn-primary">Voir</a>
+                <p>Maîtrisez les réseaux informatiques, base de la cybersécurité</p>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'formations_reseau' %}" class="btn btn-primary">Voir</a>
+                {% else %}
+                    <a href="#" class="btn btn-primary" onclick="alertConnexion()">Voir</a>
+                {% endif %}
             </div>
-            <div class="card " data-aos="zoom-out" data-aos-duration="500" data-aos-delay="300">
-              <img src="{% static 'cybersecurite.png'%}" alt="Projet 1">
-              <h2>Développement Mobile</h2>
-              <p>apprener a creer des application mobile </p>
-              <a href="{% url 'formations_dev_mobile' %}" class="btn btn-primary">Voir</a>
-          </div>
-          <div class="card" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="700">
-              <img src="{% static 'cybersecurite.png'%}" alt="Projet 2">
-              <h2>Design</h2>
-              <p>Maitriser l'art du design qui attire votre client</p>
-              <a href="{% url 'formations_design' %}" class="btn btn-primary">Voir</a>
-          </div>
-          
+    
+            <div class="card" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="300">
+                <img src="{% static 'cybersecurite.png' %}" alt="Projet 1">
+                <h2>Développement Mobile</h2>
+                <p>Apprenez à créer des applications mobiles</p>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'formations_dev_mobile' %}" class="btn btn-primary">Voir</a>
+                {% else %}
+                    <a href="#" class="btn btn-primary" onclick="alertConnexion()">Voir</a>
+                {% endif %}
+            </div>
+    
+            <div class="card" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="700">
+                <img src="{% static 'cybersecurite.png' %}" alt="Projet 2">
+                <h2>Design</h2>
+                <p>Maîtrisez l'art du design qui attire vos clients</p>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'formations_design' %}" class="btn btn-primary">Voir</a>
+                {% else %}
+                    <a href="#" class="btn btn-primary" onclick="alertConnexion()">Voir</a>
+                {% endif %}
+            </div>
         </div>
     </section>
- 
+    
+    <!-- JavaScript pour afficher une alerte -->
+    <script>
+        function alertConnexion() {
+            alert("Vous devez vous connecter d'abord !");
+        }
+    </script>
+    
+
     <style>
     
         #section3 {
@@ -704,7 +786,6 @@ outils pour enlever fond : EzRemove.ai
     </style>
 
 
-
 </div>
 </section>
 <!--A FORMATION END section -->
@@ -716,13 +797,11 @@ outils pour enlever fond : EzRemove.ai
     // Initialiser AOS
     AOS.init();
 </script>
-
-
 <br>
 <!--<img  class="w3-card-4 w3-image" src="https://tsilavina.alwaysdata.net/profil.jpg" alt="commanders" data-aos="fade-left" data-aos-duration="700" data-aos-delay="500" style="width: 500px;height: 500px;">  -->
 
 
-
+<!-- SECTION BLOG -->
 
 <section id="blog" style="margin-top: 60px;">
     <h1 style="text-align: center;">Blog</h1>
@@ -776,19 +855,12 @@ outils pour enlever fond : EzRemove.ai
 </section>
 
 
-
-
-
-
-
-
-
-
+<!-- BLOG FIN SECTION -->
     <br><br><br>
 
 
 
-
+<!-- CONTACT SECTION -->
     <section id="contact" style="margin-top: 60px;">
         <h1 style="text-align: center;">Contactez-nous !</h1>
         <div style="text-align: center; color: black; height: 2px; width: 100px; background-color: black; margin: 0 auto; margin-top: 15px;"></div>
@@ -863,6 +935,7 @@ outils pour enlever fond : EzRemove.ai
     
 
 
+<!-- CONTACT FIN SECTION -->
 
 
 
@@ -870,9 +943,8 @@ outils pour enlever fond : EzRemove.ai
 
 
 
-
-
-    <section>
+<!-- FOOTER -->
+    <section id="footer">
         <footer style="background-color: #111; color: white; padding: 40px 0; font-size: 14px;">
             <div style="display: flex; justify-content: space-around; flex-wrap: wrap; max-width: 1200px; margin: auto;">
                 
@@ -921,9 +993,8 @@ outils pour enlever fond : EzRemove.ai
         
             <p style="text-align: center; color: #bbb;">© <script>document.write(new Date().getFullYear());</script> cybeXus - Tous droits réservés.</p>
         </footer>
-        
-
-
     </section>
+
+    <!-- END FOOTER -->
 </body>
 </html>
