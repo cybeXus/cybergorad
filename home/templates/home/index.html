@@ -104,7 +104,7 @@ outils pour enlever fond : EzRemove.ai
             <a href="{% url 'login' %}" class="button-parallelogram" style="margin-left: 5px;">
                 <i class="fa-solid fa-right-to-bracket"></i> Login
             </a>
-<s></s>            
+           
          
 
 
@@ -130,7 +130,7 @@ outils pour enlever fond : EzRemove.ai
     <!-- HEADER Section -->
     <header class="header-container">
       
-        <img src="{% static 'fond2.jpg' %}" alt="fond" class="w3-card-4" style="width: 100%;filter: brightness(0.4);">
+        <img src="{% static 'blue_plexus.jpg' %}" alt="fond" class="w3-card-4" style="width: 100%;filter: brightness(0.4);">
 
         <div class="header-text">
             Créeons le monde du futur avec nous <br> <br>
@@ -223,6 +223,9 @@ outils pour enlever fond : EzRemove.ai
     }
 </script>
 
+
+
+
     <style>
         * {
             margin: 0;
@@ -233,6 +236,7 @@ outils pour enlever fond : EzRemove.ai
             font-size: 10px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             background-color: #f8f9fa;
+          
         }
         /* ======= NAVBAR ======= */
         #navbar {
@@ -355,8 +359,8 @@ outils pour enlever fond : EzRemove.ai
 
     <div class="container" >
         <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-6 mt-5" style="padding: 100px 130px 20px 80px;" data-aos="fade-right" data-aos-duration="700" data-aos-delay="100" >
-                <p style="text-align: center;font-size: 12px;word-spacing: 2px;"> Qui sommes-nous ? 
+            <div class="col-sm-12 col-md-6 col-lg-6 mt-5" style="padding: 60px 130px 20px 80px;" data-aos="fade-right" data-aos-duration="700" data-aos-delay="100" >
+                <p style="text-align: center;font-size: 15px;word-spacing: 2px;"> Qui sommes-nous ? 
                     CybeXus est une entreprise spécialisée dans les technologies de l’information, la cybersécurité et le design numérique. Nous offrons des solutions avancées pour aider les entreprises et les particuliers à relever les défis du monde digital. Grâce à notre expertise en développement web, administration réseau, cybersécurité et design UI/UX, nous aidons nos clients à optimiser leur présence numérique tout en garantissant la protection de leurs données.
                 </p>
             </div>
@@ -371,6 +375,102 @@ outils pour enlever fond : EzRemove.ai
     <h1 style="text-align: center;margin-top: 60px;">Notre Mission</h1>
 
     <div style="text-align: center; color: black; height: 2px; width: 100px; background-color: black; margin: 0 auto;margin-top: 15px;" ></div>
+<br><br><br>
+
+
+
+
+
+
+<style>
+    .section-box {
+
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 10px;
+   
+
+        margin: 10px;
+    }
+
+    .container-fluid {
+    position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden; /* Évite tout débordement */
+}
+
+/* Ajouter une image de fond assombrie sans affecter le contenu */
+.container-fluid::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/static/about.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+
+    filter: brightness(0.4); /* Appliquer uniquement sur l’image */
+    z-index: 1;
+}
+
+/* Garder le contenu au-dessus de l'overlay */
+.container-fluid > * {
+    position: relative;
+    z-index: 2;
+}
+
+    
+    .icon {
+        font-size: 60px;
+        color: #007bff;
+        margin-bottom: 50px;
+    }
+    .title {
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 40px;
+    }
+</style>
+</head>
+<body>
+
+    <div class="container-fluid" style="background-image: url('/static/about.jpg');background-attachment: fixed;background-size: cover; padding: 50px 0;">
+        <div class="row text-center">
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="section-box" data-aos="fade-right" data-aos-duration="700" data-aos-delay="200" >
+                    <i class="fas fa-eye icon"></i>
+                    <div class="title">Vision</div>
+                    <p style="color: white;font-size: 20px;">Nous aspirons à un monde où la cybersécurité est accessible à tous, garantissant un Internet plus sûr pour les entreprises et les particuliers.</p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="section-box" data-aos="fade-right" data-aos-duration="700" data-aos-delay="400" >
+                    <i class="fas fa-bullseye icon"></i>
+                    <div class="title">Mission</div>
+                    <p style="color: white;font-size: 20px;">Fournir des solutions innovantes et éducatives pour renforcer la sécurité des infrastructures numériques face aux menaces cybernétiques.</p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="section-box" data-aos="fade-right" data-aos-duration="700" data-aos-delay="600" >
+                    <i class="fas fa-flag-checkered icon"></i>
+                    <div class="title">Objectif</div>
+                    <p style="color: white;font-size: 20px;">Protéger les données, sensibiliser les utilisateurs et former une nouvelle génération d’experts en cybersécurité pour un avenir numérique plus sûr.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 
 
@@ -381,12 +481,12 @@ outils pour enlever fond : EzRemove.ai
 
 <!-- Team Section -->
 <div class="w3-container" style="padding:128px 16px" id="team">
-    <h3 class="w3-center">l'equipe</h3>
+    <h3 class="w3-center" style="font-size: 20px;">l'equipe</h3>
     <p class="w3-center w3-large">The ones who runs this company</p>
     <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
       <div class="w3-col l3 m6 w3-margin-bottom">
         <div class="w3-card" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="100">
-          <img src="#" alt="John"  style="width:100%">
+          <img src="{% static 'cybexus.jpg'%}" alt="John"  style="width:100%">
           <div class="w3-container" >
             <h3>cybergorad</h3>
             <p class="w3-opacity">cybersecurity expert</p>
@@ -397,7 +497,7 @@ outils pour enlever fond : EzRemove.ai
       </div>
       <div class="w3-col l3 m6 w3-margin-bottom">
         <div class="w3-card" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="300">
-          <img src="#" alt="Jane" style="width:100%">
+          <img src="{% static 'cybexus.jpg'%}" alt="Jane" style="width:100%">
           <div class="w3-container">
             <h3>Evariste</h3>
             <p class="w3-opacity">Conception expert</p>
@@ -408,7 +508,7 @@ outils pour enlever fond : EzRemove.ai
       </div>
       <div class="w3-col l3 m6 w3-margin-bottom">
         <div class="w3-card" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="500">
-          <img src="#" alt="Mike" style="width:100%">
+          <img src="{% static 'cybexus.jpg'%}" alt="Mike" style="width:100%">
           <div class="w3-container">
             <h3>Andrianina</h3>
             <p class="w3-opacity">Developpeuse</p>
@@ -419,7 +519,7 @@ outils pour enlever fond : EzRemove.ai
       </div>
       <div class="w3-col l3 m6 w3-margin-bottom">
         <div class="w3-card" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="700">
-          <img src="#" alt="Mike" style="width:100%">
+          <img src="{% static 'cybexus.jpg'%}" alt="Mike" style="width:100%">
           <div class="w3-container">
             <h3>Ravaka</h3>
             <p class="w3-opacity">REseau women</p>
@@ -430,7 +530,7 @@ outils pour enlever fond : EzRemove.ai
       </div>
       <div class="w3-col l3 m6 w3-margin-bottom">
         <div class="w3-card" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="900">
-          <img src="#" alt="Dan" style="width:100%">
+          <img src="{% static 'cybexus.jpg'%}" alt="Dan" style="width:100%">
           <div class="w3-container">
             <h3>njina</h3>
             <p class="w3-opacity">Designer pro</p>
@@ -458,7 +558,7 @@ outils pour enlever fond : EzRemove.ai
 
 
 <!--FORMATION section -->
-<section id="formation" style="margin-top: 100px;">
+<section id="formation">
 <div>
     <h1 style="text-align: center;">Nos Formations</h1>
     <div style="text-align: center; color: black; height: 2px; width: 100px; background-color: black; margin: 0 auto;margin-top: 15px;"></div>
