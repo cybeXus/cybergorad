@@ -96,7 +96,7 @@ outils pour enlever fond : EzRemove.ai
         <img src="{% static 'fond2.jpg' %}" alt="fond" class="w3-card-4" style="width: 100%;filter: brightness(0.4);">
 
         <div class="header-text">
-            Créons le monde du futur avec nous <br> 
+            Créeons le monde du futur avec nous <br> 
 
             <button style="background-color: rgba(0, 0, 0, 0.5); color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s;">
                 Démarrer
@@ -110,6 +110,24 @@ outils pour enlever fond : EzRemove.ai
         
     </header>
     <!--HEADER  Fin section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <script>
 
@@ -249,9 +267,9 @@ outils pour enlever fond : EzRemove.ai
 
     <div style="text-align: center; color: black; height: 2px; width: 100px; background-color: black; margin: 0 auto;margin-top: 15px;" ></div>
 
-    <div class="container-fluid" >
+    <div class="container" >
         <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-6 mt-5" style="padding: 100px 80px 20px 80px;" data-aos="fade-right" data-aos-duration="700" data-aos-delay="100" >
+            <div class="col-sm-12 col-md-6 col-lg-6 mt-5" style="padding: 100px 130px 20px 80px;" data-aos="fade-right" data-aos-duration="700" data-aos-delay="100" >
                 <p style="text-align: center;font-size: 12px;word-spacing: 2px;"> Qui sommes-nous ? 
                     CybeXus est une entreprise spécialisée dans les technologies de l’information, la cybersécurité et le design numérique. Nous offrons des solutions avancées pour aider les entreprises et les particuliers à relever les défis du monde digital. Grâce à notre expertise en développement web, administration réseau, cybersécurité et design UI/UX, nous aidons nos clients à optimiser leur présence numérique tout en garantissant la protection de leurs données.
                 </p>
@@ -287,32 +305,35 @@ outils pour enlever fond : EzRemove.ai
             <div class="card" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="100">
                 <img src="assets/img/projects/goradphish.png" alt="Projet 1" >
                 <h2>Developpement Web </h2>
-                <p>[*] Tools de simulation attaque phishing pour sensibilisation contre cyberattaque</p>
-                <button class="btn-view" onclick="window.location = 'https://github.com/cybergorad/goradphish'">Voir</button>
+                <p>Apprener les language de programmation REACT , LARAVEL, DJANGO</p>
+                <a href="{% url 'formations_dev_web' %}">Voir</a>
+
+
             </div>
             <div class="card" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="500">
-                <img src="assets/img/projects/goradsic.png" alt="Projet 2">
+                <img src="{% static 'cybersecurite.png'%}" alt="Projet 2">
                 <h2>Cybersécurité</h2>
-                <p>[*] Rien n'est plus génial que de savourer de la musique et contempler des photos gratuitement, laissant l'imagination s'évader sans limites !</p>
-                <button class="btn-view">Voir</button>
+                <p>Apprener a devenir un hacker , pirater comme des pros</p>
+                <a href="{% url 'formations_cybersecurite' %}">Voir</a>
+
             </div>
             <div class="card" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="900">
                 <img src="assets/img/projects/toliara.png" alt="Projet 3">
                 <h2>Réseau</h2>
-                <p>[*] Application Web de tourismes pour la région de Toliara de Madagascar</p>
-                <button class="btn-view" onclick="window.location = 'http://faselook.atwebpages.com'">Voir</button>
+                <p>Maitriser la réseau informatique , base de la cybersécurité</p>
+                <a href="{% url 'formations_reseau' %}">Voir</a>
             </div>
             <div class="card " data-aos="zoom-out" data-aos-duration="500" data-aos-delay="300">
               <img src="assets/img/projects/gprojects.png" alt="Projet 1">
               <h2>Développement Mobile</h2>
-              <p>[*] Un Application Laravel de Gestion de Projets (SOLO ou TEAM)</p>
-              <button class="btn-view">Voir</button>
+              <p>apprener a creer des application mobile </p>
+              <a href="{% url 'formations_dev_mobile' %}">Voir</a>
           </div>
           <div class="card" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="700">
               <img src="assets/img/projects/hacker.png" alt="Projet 2">
               <h2>Design</h2>
-              <p>[*] Concept fondamental du termes Backdoor (INTRUSION SIMULATION)</p>
-              <button class="btn-view" onclick="window.location = 'https://github.com/cybergorad/goradshell'">Voir</button>
+              <p>Maitriser l'art du design qui attire votre client</p>
+              <a href="{% url 'formations_design' %}">Voir</a>
           </div>
           
         </div>
@@ -414,21 +435,6 @@ outils pour enlever fond : EzRemove.ai
 
 
 
-
-
-
-    <ul>
-        {% for formation in formations %}
-            <li>{{ formation.titre }} - {{ formation.description }}</li>
-            
-            {% if formation.video %}
-                <video autoplay muted loop id="myVideo" width="500px" height="500px">
-                    <source src="{{ formation.video.url }}" type="video/mp4">
-                    ERROR: Don't support HTML 5 Vidéos
-                </video>
-            {% endif %}
-        {% endfor %}
-    </ul>
 </div>
 </section>
 <!--A FORMATION END section -->
@@ -443,15 +449,23 @@ outils pour enlever fond : EzRemove.ai
 
 
 <br>
-<img  class="w3-card-4 w3-image" src="https://tsilavina.alwaysdata.net/profil.jpg" alt="commanders" data-aos="fade-left" data-aos-duration="700" data-aos-delay="500" style="width: 500px;height: 500px;">
+<!--<img  class="w3-card-4 w3-image" src="https://tsilavina.alwaysdata.net/profil.jpg" alt="commanders" data-aos="fade-left" data-aos-duration="700" data-aos-delay="500" style="width: 500px;height: 500px;">  -->
 
 
 
-    <h1 id="blog" style="text-align: center;" >blog</h1>
+
+<section id="blog" style="margin-top: 60px;">
+    <h1 style="text-align: center;">Blog</h1>
+
+    <div style="text-align: center; color: black; height: 2px; width: 100px; background-color: black; margin: 0 auto;margin-top: 15px;" ></div>
+
     {% for blog in blogs %}
     <li>{{blog.titre}} - {{blog.date_publication}}</li>
     <h2>{{ blog.contenu }}</h2>
     {% endfor %}
+</section>
+
+
 
 
 
@@ -463,118 +477,134 @@ outils pour enlever fond : EzRemove.ai
 
 
 
- <section class="contact-container" id="contact">
-        <div class="contact-item">
-            <strong>Email :</strong> <a href="mailto:{{ contacts.email }}">{{ contacts.email }}</a>
-        </div>
-        <div class="contact-item">
-            <strong>Téléphone :</strong> {{ contacts.telephone }}
-        </div>
-        <div class="contact-item">
-            <strong>Adresse :</strong> {{ contacts.adresse }}
-        </div>
-        <div class="contact-item social-links">
-            <strong>Réseaux Sociaux :</strong>
-            <br>
-            {% for nom, lien in contacts.reseaux.items %}
-                <a href="{{ lien }}" target="_blank"><i class="fab fa-{{ nom|lower }}"></i></a>
-            {% endfor %}
-        </div>
-        <style>
-            .contact-container {
-            width: 80%;
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 128, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .contact-container:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 24px rgba(0, 128, 0, 0.3);
-        }
-
-        .contact-item {
-            padding: 15px;
-            margin: 10px 0;
-            border-bottom: 1px solid #ccc;
-            transition: background 0.3s ease;
-        }
-
-        .contact-item:hover {
-            background: #f1f1f1;
-        }
-
-        a {
-            color: green;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #28a745;
-            text-decoration: underline;
-        }
-
-        .social-links a {
-            margin: 0 10px;
-            font-size: 1.2rem;
-        }
-
-        .social-links a:hover {
-            color: #155724;
-        }
-
-        /* Animations */
-        @keyframes gradientBackground {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        @keyframes slideDown {
-            0% {
-                transform: translateY(-100%);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-        </style>
+    <section id="contact" style="margin-top: 60px;">
+        <h1 style="text-align: center;">Contactez-nous !</h1>
+        <div style="text-align: center; color: black; height: 2px; width: 100px; background-color: black; margin: 0 auto; margin-top: 15px;"></div>
+        
+        <form action="{% url 'contact' %}" method="post" style="max-width: 500px; margin: 30px auto; padding: 20px; background: #f9f9f9; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+            {% csrf_token %}
+            
+            <label for="message" style="font-weight: bold;">Votre Message :</label>
+            <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 10px; margin: 5px 0 15px 0; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+            
+            <style>
+                button {
+                    font-family: inherit;
+                    font-size: 20px;
+                    background: #007BFF;
+                    color: white;
+                    padding: 10px;
+                    padding-left: 0.9em;
+                    display: flex;
+                    align-items: center;
+                    border: none;
+                    border-radius: 16px;
+                    overflow: hidden;
+                    transition: all 0.2s;
+                    cursor: pointer;
+                }
+                button span {
+                    display: block;
+                    margin-left: 0.3em;
+                    transition: all 0.3s ease-in-out;
+                }
+                button svg {
+                    display: block;
+                    transform-origin: center center;
+                    transition: transform 0.3s ease-in-out;
+                }
+                button:hover .svg-wrapper {
+                    animation: fly-1 0.6s ease-in-out infinite alternate;
+                }
+                button:hover svg {
+                    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+                }
+                button:hover span {
+                    transform: translateX(5em);
+                }
+                button:active {
+                    transform: scale(0.95);
+                }
+                @keyframes fly-1 {
+                    from {
+                        transform: translateY(0.1em);
+                    }
+                    to {
+                        transform: translateY(-0.1em);
+                    }
+                }
+            </style>
+            
+            <button type="submit" {% if not user.is_authenticated %}disabled{% endif %}>
+                <div class="svg-wrapper-1">
+                    <div class="svg-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <span>Envoyer</span>
+            </button>
+        </form>
     </section>
-
-    <script>
-        // Animation pour l'apparition des éléments de contact
-        document.addEventListener('DOMContentLoaded', () => {
-            const contactItems = document.querySelectorAll('.contact-item');
-            contactItems.forEach((item, index) => {
-                setTimeout(() => {
-                    item.style.opacity = 1;
-                    item.style.transform = 'translateY(0)';
-                }, index * 200);
-            });
-        });
-
-        // Ajout d'animations CSS pour l'entrée des éléments de contact
-        document.styleSheets[0].insertRule(`
-            .contact-item {
-                opacity: 0;
-                transform: translateY(20px);
-                transition: opacity 0.5s ease-in, transform 0.5s ease-in;
-            }
-        `);
-    </script>
+    
 
 
-    </div>
+
+
+
+
+
+
+
+
+
+    <section>
+        <footer style="background-color: #111; color: white; padding: 40px 0; font-size: 14px;">
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap; max-width: 1200px; margin: auto;">
+                
+                <!-- Section À propos -->
+                <div style="flex: 1; min-width: 250px; padding: 10px;">
+                    <h3 style="color: #007BFF;">À propos</h3>
+                    <p>Nous proposons des formations de qualité en cybersécurité, développement web, réseau et bien plus encore.</p>
+                </div>
+        
+                <!-- Section Liens rapides -->
+                <div style="flex: 1; min-width: 250px; padding: 10px;">
+                    <h3 style="color: #007BFF;">Liens rapides</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#formation" style="color: #ddd; text-decoration: none;">Formations</a></li>
+                        <li><a href="#blog" style="color: #ddd; text-decoration: none;">Blog</a></li>
+                        <li><a href="#contact" style="color: #ddd; text-decoration: none;">Contact</a></li>
+                        <li><a href="#faq" style="color: #ddd; text-decoration: none;">FAQ</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Section Contact -->
+                <div style="flex: 1; min-width: 250px; padding: 10px;">
+                    <h3 style="color: #007BFF;">Contact</h3>
+                    <p>Email : <a href="mailto:contact@cybergorad.com" style="color: #ddd;">cybergorad@alwaysdata.net</a></p>
+                    <p>Téléphone : <a href="tel:+26134567890" style="color: #ddd;">+261 38 75 813 56</a></p>
+                    <p>Adresse : Antananarivo, Madagascar</p>
+                </div>
+        
+                <!-- Section Réseaux Sociaux -->
+                <div style="flex: 1; min-width: 250px; padding: 10px; text-align: center;">
+                    <h3 style="color: #007BFF;">Suivez-nous</h3>
+                    <a href="#" style="margin: 5px; color: #ddd; text-decoration: none;">🔵 Facebook</a> |
+                    <a href="#" style="margin: 5px; color: #ddd; text-decoration: none;">🐦 Twitter</a> |
+                    <a href="#" style="margin: 5px; color: #ddd; text-decoration: none;">📸 Instagram</a>
+                </div>
+            </div>
+        
+            <hr style="border: 0; height: 1px; background: #444; margin: 20px auto; width: 80%;">
+        
+            <p style="text-align: center; color: #bbb;">© <script>document.write(new Date().getFullYear());</script> cybeXus - Tous droits réservés.</p>
+        </footer>
+        
+
+
+    </section>
 </body>
 </html>
